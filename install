@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# RC files
+cd $(dirname $BASH_SOURCE)
+BASE=$(pwd)
+
+for rc in *rc *config tmux.conf zlogin gitignore_global rspec; do
+  mkdir -pv bak
+  [ -e ~/.$rc ] && mv -v ~/.$rc bak/.$rc
+  ln -sfv $BASE/$rc ~/.$rc
+done
+
+./install-vim

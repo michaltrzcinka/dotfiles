@@ -1,0 +1,27 @@
+[alias]
+  st=status
+  co=checkout
+  cp=cherry-pick
+  br=branch
+  aa=add -A
+  c=commit
+  cm=commit -m
+  cam=commit -am
+  pf=push --force-with-lease
+
+[user]
+	name = Michal Trzcinka
+	email = michal.trzcinka@allani.pl
+[push]
+	default = current
+#[diff]
+#	external = /home/michal/scripts/my_diff.sh
+[merge]
+	   tool = intellij
+[mergetool "intellij"]
+	   cmd = idea merge $(cd $(dirname "$LOCAL") && pwd)/$(basename "$LOCAL") $(cd $(dirname "$REMOTE") && pwd)/$(basename "$REMOTE") $(cd $(dirname "$BASE") && pwd)/$(basename "$BASE") $(cd $(dirname "$MERGED") && pwd)/$(basename "$MERGED")
+	      trustExitCode = true
+[diff]
+	   tool = intellij
+[difftool "intellij"]
+	   cmd = rubymine.sh diff $(cd $(dirname "$LOCAL") && pwd)/$(basename "$LOCAL") $(cd $(dirname "$REMOTE") && pwd)/$(basename "$REMOTE")
