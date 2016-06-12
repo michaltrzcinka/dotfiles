@@ -8,3 +8,4 @@ BASE=$(pwd)
 ln -sfv $BASE/git/.gitconfig ~/.gitconfig
 
 ./install-vim
+echo "install finished successfully"

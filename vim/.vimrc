@@ -74,8 +74,8 @@ silent! if plug#begin('~/.vim/plugged')
 Plug 'pbrisbin/vim-mkdir'
 
 " Colors
-"Plug 'chriskempson/vim-tomorrow-theme'
-"Plug 'altercation/vim-colors-solarized'
+Plug 'altercation/vim-colors-solarized'
+Plug 'chriskempson/base16-vim'
 
 " Edit
 "Plug 'tpope/vim-repeat'
@@ -111,8 +111,9 @@ Plug 'gregsexton/gitv', { 'on': 'Gitv' }
 call plug#end()
 endif
 
-colorscheme solarized
-set background=light
+set background=dark
+let base16colorspace=256
+colorscheme base16-default
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
