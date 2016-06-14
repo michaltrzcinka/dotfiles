@@ -1,3 +1,6 @@
+" GUI Options
+set guioptions-=T
+
 let mapleader      = ' '
 let maplocalleader = ' '
 
@@ -41,8 +44,8 @@ set nobackup
 set nowb
 
 " <F10> | NERD Tree
-"inoremap <F10> <esc>:NERDTreeToggle<cr>
-"nnoremap <F10> :NERDTreeToggle<cr>
+inoremap <F10> <esc>:NERDTreeToggle<cr>
+nnoremap <F10> :NERDTreeToggle<cr>
 
 " Toggle line numbers with Ctrl + N
 ":nmap <C-N><C-N> :set invnumber<CR>
