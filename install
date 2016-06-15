@@ -8,4 +8,5 @@ BASE=$(pwd)
 ln -sfv $BASE/git/.gitconfig ~/.gitconfig
 
 ./install-vim
+ln -sfv $BASE/rubymine/.ideavimrc ~/.ideavimrc
 echo "install finished successfully"
