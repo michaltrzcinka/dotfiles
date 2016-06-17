@@ -23,7 +23,6 @@ set expandtab
 
 " ================ Search ===========================
 set incsearch       " Find the next match as we type the search
-set hlsearch        " Highlight searches by default
 set ignorecase      " Ignore case when searching...
 set smartcase       " ...unless we type a capital
 
@@ -39,25 +38,4 @@ filetype plugin on    " Enable filetype-specific plugins
 set noswapfile
 set nobackup
 set nowb
-
-" Toggle line numbers with Ctrl + N
-":nmap <C-N><C-N> :set invnumber<CR>
-
-" ----------------------------------------------------------------------------
-" <tab> / <s-tab> | Circular windows navigation
-" ----------------------------------------------------------------------------
-"nnoremap <tab>   <c-w>w
-"nnoremap <S-tab> <c-w>W
-
-" ----------------------------------------------------------------------------
-" vim-fugitive
-" ----------------------------------------------------------------------------
-"nmap     <Leader>g :Gstatus<CR>gg<c-n>
-"nnoremap <Leader>d :Gdiff<CR>
-
-" RSpec.vim mappings
-"map <Leader>t :call RunCurrentSpecFile()<CR>
-"map <Leader>s :call RunNearestSpec()<CR>
-"map <Leader>l :call RunLastSpec()<CR>
-"map <Leader>a :call RunAllSpecs()<CR>
 
