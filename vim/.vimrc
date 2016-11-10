@@ -11,10 +11,10 @@ set nocompatible
 
 " ================ Navigation========================
 set mouse=c
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
+"nnoremap <Left> :echoe "Use h"<CR>
+"nnoremap <Right> :echoe "Use l"<CR>
+"nnoremap <Up> :echoe "Use k"<CR>
+"nnoremap <Down> :echoe "Use j"<CR>
 
 " ================ Indentation ======================
 set autoindent
@@ -118,9 +118,9 @@ endif
 
 "colorscheme solarized
 "set background=dark
-set background=dark
-let base16colorspace=256
-colorscheme base16-default
+"set background=dark
+"let base16colorspace=256
+"colorscheme base16-default
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
