@@ -7,6 +7,9 @@ BASE=$(pwd)
 
 ln -sfv $BASE/git/.gitconfig ~/.gitconfig
 
-./install-vim
+#./install-vim
 ln -sfv $BASE/rubymine/.ideavimrc ~/.ideavimrc
+
+ln -sfv $BASE/tmux/.tmux.conf ~/.tmux.conf
+
 echo "install finished successfully"

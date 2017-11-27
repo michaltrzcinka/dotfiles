@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+#set -e
 
 export GIT_SSL_NO_VERIFY=true
 mkdir -pv ~/.vim/autoload

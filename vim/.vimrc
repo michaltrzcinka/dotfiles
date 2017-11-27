@@ -121,6 +121,7 @@ endif
 "set background=dark
 "let base16colorspace=256
 "colorscheme base16-default
+colorscheme railscasts
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")

@@ -16,6 +16,7 @@
 	default = current
 #[diff]
 #	external = /home/michal/scripts/my_diff.sh
+# external = /Users/michal/Tools/diffy
 [merge]
 	   tool = intellij
 [mergetool "intellij"]
