@@ -1,0 +1,16 @@
+{
+    "ruby.intellisense": "rubyLocate",
+    "ruby.useBundler": true,
+    "elixirLS.dialyzerEnabled": false,
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 10,
+    "editor.rulers": [
+        120
+    ],
+    "editor.minimap.enabled": false,
+    "git.autofetch": true,
+    "workbench.editor.enablePreview": false,
+    "explorer.confirmDragAndDrop": false,
+    "vim.textwidth": 120,
+    "terminal.integrated.fontFamily": "Meslo LG M DZ for Powerline",
+}

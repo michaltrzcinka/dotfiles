@@ -6,6 +6,7 @@ cd $(dirname $BASH_SOURCE)
 BASE=$(pwd)
 
 ln -sfv $BASE/git/.gitconfig ~/.gitconfig
+ln -sfv $BASE/git/.gitignore_global ~/.gitignore_global
 
 #./install-vim
 ln -sfv $BASE/rubymine/.ideavimrc ~/.ideavimrc

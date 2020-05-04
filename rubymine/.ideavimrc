@@ -35,7 +35,9 @@ set noswapfile
 set nobackup
 set nowb
 
+" Plugins
 set surround
+set multiple-cursors
 
 " ================== Macros =========================
 "

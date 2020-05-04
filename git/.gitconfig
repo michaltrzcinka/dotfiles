@@ -11,20 +11,13 @@
 
 [user]
 	name = Michal Trzcinka
-	email = michal.trzcinka@allani.pl
+	email = michal@trzcinka.pl
 [push]
 	default = current
-#[diff]
-#	external = /home/michal/scripts/my_diff.sh
-# external = /Users/michal/Tools/diffy
-[merge]
-	   tool = intellij
-[mergetool "intellij"]
-	   cmd = idea merge $(cd $(dirname "$LOCAL") && pwd)/$(basename "$LOCAL") $(cd $(dirname "$REMOTE") && pwd)/$(basename "$REMOTE") $(cd $(dirname "$BASE") && pwd)/$(basename "$BASE") $(cd $(dirname "$MERGED") && pwd)/$(basename "$MERGED")
-	      trustExitCode = true
-[diff]
-	   tool = intellij
-[difftool "intellij"]
-	   cmd = rubymine.sh diff $(cd $(dirname "$LOCAL") && pwd)/$(basename "$LOCAL") $(cd $(dirname "$REMOTE") && pwd)/$(basename "$REMOTE")
 [core]
-	excludesfile = /home/michal/.gitignore_global
+	excludesfile = /Users/michal/.gitignore_global
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
