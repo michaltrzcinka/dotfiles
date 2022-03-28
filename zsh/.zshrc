@@ -1,8 +1,8 @@
 # If you come from bash you might have to change your $PATH.
+export PATH="./bin:$PATH"
 export PATH=.:$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
-
-export ZSH_TMUX_AUTOSTART=true
-export ZSH_TMUX_AUTOSTART_ONCE=true
+export PATH=$PATH:/Applications/MySQLWorkbench.app/Contents/MacOS
+export PATH=$PATH:/Users/Michal/.dotfiles/scripts
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/michal/.oh-my-zsh
@@ -65,14 +65,7 @@ ZSH_THEME="agnoster"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  capistrano
-  httpie
-  npm
-  rails
-  redis-cli
-  tmux
-  vagrant
-  web-search
+  docker-compose
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -103,38 +96,41 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-alias oa="~/Documents/Vault/Allani/vpn.sh"
 alias shut='shutdown -t 0'
-alias cdw='cd ~/Projects/Allani/allani-web'
-alias cdd='cd ~/Projects/Allani/dev-scripts'
-alias cda='cd ~/Projects/Allani/admin-panel'
-alias cdc='cd ~/Projects/Allani/client-panel'
-alias cdp='cd ~/Projects/Allani/parsers'
-alias cde='cd ~/Projects/KodiTech/elma'
-alias sa11='ssh web-server@app.a11'
+alias cde='cd ~/Code/Personal/elma'
+alias cdsg='cd ~/Code/u2i/socialguide'
+alias cdi='cd ~/Code/u2i/icarus'
+alias cdw='cd ~/Code/u2i/ns-web'
+alias cdhe='cd ~/Code/u2i/hermes'
+alias cdhy='cd ~/Code/u2i/hydra'
+alias cdc='cd ~/Code/u2i/chimera'
+alias cdcr='cd ~/Code/u2i/ns-chef-repo'
+alias cdt='cd ~/Code/u2i/ns-terraform'
 alias gcb='git rev-parse --abbrev-ref HEAD'
-alias gf='git aa; git commit --amend; git push --force-with-lease'
-alias gfn='git aa; git commit --amend --no-verify; git push --force-with-lease'
+alias gcan='git commit --amend --no-edit'
 gitimdone(){ ; branch=$(git rev-parse --abbrev-ref  HEAD); git co master; git branch -D $branch; git pull; }
-alias git=hub
 
 alias l='ls -la'
 
-alias sshelma='ssh-add -D; ssh-add ~/.ssh/id_koditech; ssh-add ~/.ssh/id_rsa'
-alias sshallani='ssh-add -D; ssh-add ~/.ssh/id_allani_ansible; ssh-add ~/.ssh/id_rsa'
-alias vim=nvim
-
-export GOPATH="/Users/michal/Projects/Allani/logo"
-
 export HISTSIZE=5000000
 export HISTFILESIZE=5000000
-#export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
-export ZSH_TMUX_AUTOSTART=true
-export ZSH_TMUX_AUTOSTART_ONCE=true
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+eval "$(rbenv init -)"
+prompt_context(){}
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export HUSKY_SKIP_INSTALL=1
+export HUSKY_SKIP_HOOKS=1
+
+export GITHUB_ACCESS_TOKEN=65d4d31fc9e455df9b93b80f3a41342c43ead552
+
+# this enables VI mode in ZSH
+#bindkey -v
+#bindkey "^R" history-incremental-search-backward
 
 eval $(thefuck --alias)
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

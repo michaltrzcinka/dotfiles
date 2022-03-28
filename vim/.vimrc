@@ -110,7 +110,7 @@ Plug 'xolox/vim-misc'
 Plug 'fatih/vim-go'
 
 " Git
-Plug 'tpope/vim-fugitive'
+"Plug 'tpope/vim-fugitive'
 Plug 'gregsexton/gitv', { 'on': 'Gitv' }
 
 call plug#end()

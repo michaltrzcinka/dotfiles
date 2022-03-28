@@ -42,3 +42,6 @@ set multiple-cursors
 " ================== Macros =========================
 "
 let @d='wved"_x"_xOmodule <Esc>pj^VG>Go<BS><CR>end<Esc>V<'
+
+set visualbell
+set noerrorbellsj

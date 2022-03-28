@@ -13,4 +13,14 @@
     "explorer.confirmDragAndDrop": false,
     "vim.textwidth": 120,
     "terminal.integrated.fontFamily": "Meslo LG M DZ for Powerline",
+    "terminal.integrated.shell.osx": "/bin/zsh",
+    "[yaml]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+    },
+    "terminal.integrated.scrollback": 1000000,
+    "terminal.integrated.showExitAlert": false,
+    "workbench.editor.revealIfOpen": true,
+    "window.zoomLevel": 0,
+    "workbench.sideBar.location": "right",
 }
