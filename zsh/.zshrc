@@ -3,7 +3,6 @@ export PATH="./bin:$PATH"
 export PATH=.:$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=$PATH:/Applications/MySQLWorkbench.app/Contents/MacOS
 export PATH=$PATH:/Users/Michal/.dotfiles/scripts
-
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -76,6 +75,8 @@ ZSH_THEME="agnoster"
 plugins=(
   git
   docker-compose
+  zsh_codex
+  kubectl
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -105,9 +106,94 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias cde='cd ~/Code/Personal/elma'
+alias cdd='cd ~/Downloads'
+alias cde='cd ~/Code/elma'
+alias cdir='cd ~/Code/Inkitt/rocky'
+alias cdira='cd ~/Code/Inkitt/rocky-ahoy'
+alias cdirh='cd ~/Code/Inkitt/react-hermione'
+alias cdif='cd ~/Code/Inkitt/flash'
+alias cdic='cd ~/Code/Inkitt/galatea-chatbot'
+alias cdij='cd ~/Code/Inkitt/galatea-backend-jupiter'
+alias cdieb='cd ~/Code/Inkitt/galatea-editor-back'
+alias cdisw='cd ~/Code/Inkitt/story-writer'
+
 alias gcan='git commit --amend --no-edit'
+alias gcc="git add apps/galatea/src && git cm 'cleanup' && gp"
+alias gas="git add apps/galatea/src"
+alias pts='gl && gp && git co staging && gl && git merge - && gp && git co -'
+alias gpnv='gp --no-verify'
+
 alias l='ls -la'
+
+alias rgr='dce web rails routes | grep'
+alias rails='dcr --rm web rails'
+
+alias nx='pnpm nx'
 
 export HISTSIZE=5000000
 export HISTFILESIZE=5000000
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/michal/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/michal/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/michal/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/michal/google-cloud-sdk/completion.zsh.inc'; fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+autoload -U add-zsh-hook
+
+load-nvmrc() {
+  local nvmrc_path
+  nvmrc_path="$(nvm_find_nvmrc)"
+
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version
+    nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+      nvm install
+    elif [ "$nvmrc_node_version" != "$(nvm version)" ]; then
+      nvm use
+    fi
+  elif [ -n "$(PWD=$OLDPWD nvm_find_nvmrc)" ] && [ "$(nvm version)" != "$(nvm version default)" ]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+  fi
+}
+
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
+
+eval $(thefuck --alias)
+
+eval "$(rbenv init - zsh)"
+
+gch() {
+ git checkout "$(git branch | fzf | tr -d '[:space:]')"
+}
+
+bindkey '^X' create_completion
+# Below fixes an issue with Option+D and strings like "yarn && nx something && something"
+WORDCHARS='*?_-.[]~=/&;!#$%^(){}<>'
+
+source /Users/michal/.docker/init-zsh.sh || true # Added by Docker Desktop
+
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+
+# Created by `pipx` on 2023-11-06 16:26:31
+export PATH="$PATH:/Users/michal/.local/bin"
+export PATH=$PATH:$HOME/.maestro/bin
+export PATH=$PATH:$HOME/.maestro/bin
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
+# grit
+export GRIT_INSTALL="$HOME/.grit"
+export PATH="$GRIT_INSTALL/bin:$PATH"
