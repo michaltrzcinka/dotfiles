@@ -1,0 +1,18 @@
+{
+    "window.commandCenter": 1,
+    "workbench.editor.enablePreview": false,
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 500,
+    "search.useIgnoreFiles": false,
+    "python.defaultInterpreterPath": "/Users/michal/Code/knavesmire/knavesmire-backend/venv/bin/python",
+    "files.insertFinalNewline": true,
+    "search.exclude": {
+        "**/venv": true,
+        "**/.nx": true,
+        "**/ios": true,
+        "**/android": true
+    },
+    "python.languageServer": "Pylance",
+    "editor.tabSize": 2,
+    "editor.rulers": [120]
+}

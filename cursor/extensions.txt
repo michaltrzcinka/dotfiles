@@ -1,0 +1,8 @@
+FaroSystemAppender constructor
+esbenp.prettier-vscode
+github.vscode-github-actions
+mechatroner.rainbow-csv
+ms-python.debugpy
+ms-python.python
+ms-python.vscode-pylance
+vscodevim.vim
